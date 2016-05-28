@@ -44,6 +44,12 @@ module.exports = {
     const url = `https://api.fitbit.com/1/user/${user_id}/foods/log/water/date/${date}.json`;
 
     return makeRequest(url, 'get', access_token);
+  },
+
+  waterGoal({ access_token, user_id }) {
+    const url = `https://api.fitbit.com/1/user/${user_id}/foods/log/water/goal.json`;
+
+    return makeRequest(url, 'get', access_token);
   }
 }
 
