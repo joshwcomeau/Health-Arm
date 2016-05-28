@@ -14,11 +14,11 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 1em;
+  padding: .75em  ;
 }
 
 .logoIMG {
-  width: 150px;
+  width: 120px;
 }
 
 h2 {
@@ -33,7 +33,7 @@ p {
 header {
   text-align: center;
   background: red;
-  padding: 28rem 3em 6em;
+  padding: 28rem 3em 3em;
   background-image: url("img/water.jpg");
   background-size: cover;
   background-position: 50%;
@@ -42,23 +42,24 @@ header {
 button {
   padding: 1rem 6rem;
   font-size: 24px;
-  color: #FFF;
-  background: #1F8A53;
+  color: #eee;
+  background: #222;
   border: 0;
   border-bottom: 4px solid rgba(0,0,0,0.4);
   border-radius: 4px;
   outline: none;
   transition: 250ms;
-  cursor: crosshair;
+  cursor: hand;
+  font-family: "DIN Next LT Pro Condensed", sans-serif;
 }
 
-button:active {
-  transform: translateY(3px);
-  transition: 250ms;
+button:hover {
+  color: #fff;
+  background-color: #666;
 }
 
 .button-spacer {
-  margin-top: 5rem;
+  margin: 0 auto 4em;
+  width: 350px;
   height: 64px;
-  overflow: hidden;
 }
