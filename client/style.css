@@ -1,5 +1,6 @@
 body {
   font-family: "DIN Next LT Pro", sans-serif;
+  height: 100%;
 }
 
 h1 {
@@ -14,7 +15,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  padding: .75em  ;
+  padding: 0.2em .75em ;
 }
 
 .logoIMG {
@@ -33,7 +34,7 @@ p {
 header {
   text-align: center;
   background: red;
-  padding: 28rem 3em 3em;
+  padding: 24rem 3em 5em;
   background-image: url("img/water.jpg");
   background-size: cover;
   background-position: 50%;
@@ -62,4 +63,30 @@ button:hover {
   margin: 0 auto 4em;
   width: 350px;
   height: 64px;
+}
+
+.hydration-zone {
+  margin: -1em auto;
+  width: 90%;
+}
+
+.fitbit-info {
+  float: left;
+}
+
+.waterglass {
+  width: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.glasscount {
+  font-size: 3rem;
+  display: inline-block;
+}
+
+.THROWSHIT {
+  float: right;
+  margin-top: 3em;
 }
