@@ -8,11 +8,11 @@ const { calculateTimeOfNextBlast } = require('./schedule');
 
 const app = express();
 
-
+app.set('view engine', 'ejs');
 app.use(express.static('client'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.render('index', { authenticated: false });
 });
 
 app.get('/fitbit', async (function(req, res) {
@@ -24,12 +24,22 @@ app.get('/fitbit', async (function(req, res) {
     waterGoal(authInfo)
   ]));
 
-  console.log('GOAL', goal);
-  console.log("INFO", info);
 
   // We need to calculate the time of the next water blast.
-  calculateTimeOfNextBlast(info, goal)
+  const timeUntilBlast = calculateTimeOfNextBlast(info, goal);
 
+  // Round the amount of water consumed to the nearest half-cup.
+  const cupsDrank =  Math.round(info.summary.water / 236 * 2) / 2;
+  const cupsRequired = Math.round(goal.goal.goal / 236 * 2) / 2;
+
+  res.render('index', {
+    authenticated: true,
+    name: 'Josh',
+    cupsDrank,
+    cupsRequired,
+    needsMoreWater: cupsDrank < cupsRequired,
+    timeUntilBlast,
+  });
 }));
 
 app.post('/fire', (req, res) => {
